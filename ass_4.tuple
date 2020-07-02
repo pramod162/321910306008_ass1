@@ -1,0 +1,67 @@
+#1.Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary.
+#Sample data : {'1':['a','b'], '2':['c','d']}
+#Expected Output: 
+#ac
+#ad
+#bc
+#bd
+
+
+import itertools      
+d ={'1':['a','b'], '2':['c','d']}
+for combo in itertools.product(*[d[k] for k in sorted(d.keys())]):
+    print(''.join(combo))
+
+
+
+#Write a Python program to create a dictionary from a string.
+   #Sample string : 'w3resource'
+    #Expected output: {'3': 1, 's': 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+
+
+from collections import defaultdict, Counter
+str1 = 'w3resource' 
+my_dict = {}
+for letter in str1:
+    my_dict[letter] = my_dict.get(letter, 0) + 1
+print(my_dict)
+
+#3.Write a Python program to convert a tuple to a string
+
+
+
+tup = ('e', 'x', 'e', 'r', 'c', 'i', 's', 'e', 's')
+str =  ''.join(tup)
+print(str)
+
+
+
+#4.Write a Python program to slice a tuple
+
+
+#create a tuple
+tuplex = (2, 4, 3, 5, 4, 6, 7, 8, 6, 1)
+#used tuple[start:stop] the start index is inclusive and the stop index
+_slice = tuplex[3:5]
+#is exclusive
+print(_slice)
+#if the start index isn't defined, is taken from the beg inning of the tuple
+_slice = tuplex[:6]
+print(_slice)
+#if the end index isn't defined, is taken until the end of the tuple
+_slice = tuplex[5:]
+print(_slice)
+
+
+#5.Write a Python program to find the length of a tuple.
+ 
+
+
+
+tuplex = tuple("w3resource")
+print(tuplex)
+#use the len() function to known the length of tuple
+print(len(tuplex))
+
+
+
